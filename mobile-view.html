@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Audience Creator - Mobile View</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        body { max-width: 375px; margin: 0 auto; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Mobile Header -->
+    <div class="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between sticky top-0 z-10">
+        <button class="text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+        <h1 class="text-base font-semibold text-gray-900">AI Audience</h1>
+        <button class="text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="p-4 space-y-4" style="min-height: calc(100vh - 140px); padding-bottom: 80px;">
+        <!-- AI Message -->
+        <div class="flex gap-2">
+            <div class="flex-shrink-0">
+                <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                    <span class="text-sm">🤖</span>
+                </div>
+            </div>
+            <div class="flex-1">
+                <div class="bg-gray-100 rounded-2xl rounded-tl-none px-3 py-2">
+                    <p class="text-gray-900 text-sm leading-relaxed">
+                        Hi! Describe the audience you want to target.
+                    </p>
+                </div>
+                <span class="text-xs text-gray-500 mt-1 block">10:23 AM</span>
+            </div>
+        </div>
+
+        <!-- User Message -->
+        <div class="flex gap-2 justify-end">
+            <div class="flex-1 flex flex-col items-end">
+                <div class="bg-indigo-600 rounded-2xl rounded-tr-none px-3 py-2 max-w-[75%]">
+                    <p class="text-white text-sm leading-relaxed">
+                        Women in Paris interested in yoga
+                    </p>
+                </div>
+                <span class="text-xs text-gray-500 mt-1 block">10:24 AM</span>
+            </div>
+            <div class="flex-shrink-0">
+                <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
+                    <span class="text-sm">👤</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Response with Criteria -->
+        <div class="flex gap-2">
+            <div class="flex-shrink-0">
+                <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                    <span class="text-sm">🤖</span>
+                </div>
+            </div>
+            <div class="flex-1">
+                <div class="bg-gray-100 rounded-2xl rounded-tl-none px-3 py-2">
+                    <p class="text-gray-900 text-sm mb-3">
+                        Great! Here's what I found:
+                    </p>
+
+                    <!-- Compact Criteria Card -->
+                    <div class="bg-white border border-indigo-200 rounded-lg p-3 mb-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-gray-700">👤 <span class="font-medium">Female</span></span>
+                            <button class="text-indigo-600 font-medium">Edit</button>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-gray-700">📍 <span class="font-medium">Paris, France</span></span>
+                            <button class="text-indigo-600 font-medium">Edit</button>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-gray-700">💡 <span class="font-medium">Yoga</span></span>
+                            <button class="text-indigo-600 font-medium">Edit</button>
+                        </div>
+                    </div>
+
+                    <!-- Compact Estimate -->
+                    <div class="bg-indigo-50 border border-indigo-100 rounded-lg p-2.5 mb-3">
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-xs font-medium text-gray-700">📊 Audience Size</span>
+                            <span class="text-xs font-bold text-gray-900">~250K</span>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                            <div class="bg-indigo-600 h-full rounded-full" style="width: 45%"></div>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1.5">💰 €0.15 - €0.45 CPM</p>
+                    </div>
+
+                    <p class="text-gray-900 text-sm mb-3">
+                        Ready to create?
+                    </p>
+
+                    <!-- Mobile Action Buttons -->
+                    <div class="space-y-2">
+                        <button class="w-full py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg active:bg-indigo-700">
+                            🚀 Create Audience
+                        </button>
+                        <button class="w-full py-2 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-lg active:bg-gray-50">
+                            ✨ Refine
+                        </button>
+                    </div>
+                </div>
+                <span class="text-xs text-gray-500 mt-1 block">10:24 AM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Input Area (Fixed Bottom) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3">
+        <div class="flex gap-2 items-end max-w-[375px] mx-auto">
+            <button class="flex-shrink-0 w-9 h-9 flex items-center justify-center text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div class="flex-1">
+                <input
+                    type="text"
+                    placeholder="Type message..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                />
+            </div>
+            <button class="flex-shrink-0 w-9 h-9 bg-indigo-600 rounded-full flex items-center justify-center text-white active:bg-indigo-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Features Info -->
+    <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-4 text-center text-xs">
+        <p>📱 Optimized for mobile • Touch-friendly • Fast & responsive</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Audience Creator - Chat Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .message-enter {
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="bg-white rounded-t-xl border border-gray-200 px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <button class="text-gray-600 hover:text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <h1 class="text-lg font-semibold text-gray-900">AI Audience Creator</h1>
+            </div>
+            <button class="text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="bg-white border-x border-gray-200 p-6 space-y-4" style="min-height: 500px;">
+
+            <!-- AI Message 1 -->
+            <div class="flex gap-3 message-enter">
+                <div class="flex-shrink-0">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                        <span class="text-sm">🤖</span>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="bg-gray-100 rounded-2xl rounded-tl-none px-4 py-3 max-w-lg">
+                        <p class="text-gray-900 text-sm leading-relaxed">
+                            Hi! I'll help you create a Facebook audience. Describe the audience you want to target - be as specific or general as you'd like!
+                        </p>
+                    </div>
+                    <span class="text-xs text-gray-500 mt-1 block">10:23 AM</span>
+                </div>
+            </div>
+
+            <!-- User Message -->
+            <div class="flex gap-3 justify-end message-enter">
+                <div class="flex-1 flex flex-col items-end">
+                    <div class="bg-indigo-600 rounded-2xl rounded-tr-none px-4 py-3 max-w-lg">
+                        <p class="text-white text-sm leading-relaxed">
+                            I want to target women interested in yoga in Paris
+                        </p>
+                    </div>
+                    <span class="text-xs text-gray-500 mt-1 block">10:24 AM</span>
+                </div>
+                <div class="flex-shrink-0">
+                    <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
+                        <span class="text-sm">👤</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Message 2 - Analyzing -->
+            <div class="flex gap-3 message-enter">
+                <div class="flex-shrink-0">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                        <span class="text-sm">🤖</span>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="bg-gray-100 rounded-2xl rounded-tl-none px-4 py-3 max-w-2xl">
+                        <div class="flex items-center gap-2 text-indigo-600 mb-3">
+                            <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <span class="text-sm font-medium">Analyzing your request...</span>
+                        </div>
+
+                        <p class="text-gray-900 text-sm leading-relaxed mb-4">
+                            Great! I've identified the following targeting criteria:
+                        </p>
+
+                        <!-- Criteria Card -->
+                        <div class="bg-white border-2 border-indigo-200 rounded-xl p-4 space-y-3">
+                            <h3 class="font-semibold text-gray-900 text-sm mb-3">Audience Criteria</h3>
+
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-600">👤</span>
+                                    <span class="text-sm text-gray-700"><span class="font-medium">Gender:</span> Female</span>
+                                </div>
+                                <button class="text-xs text-indigo-600 hover:text-indigo-700 font-medium">Edit</button>
+                            </div>
+
+                            <div class="flex items-center justify-between py-2 border-b border-gray-100">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-600">📍</span>
+                                    <span class="text-sm text-gray-700"><span class="font-medium">Location:</span> Paris, France</span>
+                                </div>
+                                <button class="text-xs text-indigo-600 hover:text-indigo-700 font-medium">Edit</button>
+                            </div>
+
+                            <div class="flex items-center justify-between py-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-600">💡</span>
+                                    <span class="text-sm text-gray-700"><span class="font-medium">Interests:</span> Yoga</span>
+                                </div>
+                                <button class="text-xs text-indigo-600 hover:text-indigo-700 font-medium">Edit</button>
+                            </div>
+                        </div>
+
+                        <!-- Audience Size Estimate -->
+                        <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-4 mt-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">📊 Estimated Audience Size</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
+                                    <div class="bg-indigo-600 h-full rounded-full" style="width: 45%"></div>
+                                </div>
+                                <span class="text-sm font-semibold text-gray-900">~250,000</span>
+                            </div>
+                            <p class="text-xs text-gray-600 mt-2">💰 Est. reach cost: €0.15 - €0.45 per CPM</p>
+                        </div>
+
+                        <p class="text-gray-900 text-sm leading-relaxed mt-4">
+                            Would you like to refine this or create the audience?
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex gap-2 mt-4">
+                            <button class="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                                ✨ Refine Criteria
+                            </button>
+                            <button class="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-colors">
+                                🚀 Create Audience
+                            </button>
+                        </div>
+                    </div>
+                    <span class="text-xs text-gray-500 mt-1 block">10:24 AM</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Input Area -->
+        <div class="bg-white rounded-b-xl border border-gray-200 border-t-0 px-6 py-4">
+            <div class="flex gap-3 items-end">
+                <div class="flex-1">
+                    <textarea
+                        placeholder="Type your message..."
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
+                        rows="1"
+                    ></textarea>
+                </div>
+                <button class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium text-sm">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
